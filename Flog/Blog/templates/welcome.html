@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Famidok</title>
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet"></head>
+    <link rel="icon" type="image/x-icon" href="{% static 'sakura_v1.png' %}">
+<body>
+    <div class="welcome-div">
+        <div class="welcome-header">
+            <h1 class="main-header">Famidok's Blog</h1>
+        </div>
+        <div class="welcome-pictures">
+            <img src="{% static 'R34.jpg' %}" alt="A R34 at shibuya - 2026 January">
+            <p class="picture-detail">2nd of January - 21.48 @ Shibuya, Tokyo, Japan</p>
+
+        </div>
+        <div class="welcome-menu">
+            <a href="{% url 'about' %}" class="welcome-pointers">About</a>
+            <a href="{% url 'CV' %}" class="welcome-pointers">Curriculum Vitae</a>
+            <a href="{% url 'blog' %}" class="welcome-pointers">Blog</a>
+{#            <a href="{% url 'projects' %}" class="welcome-pointers">Projects</a>#}
+{#            <a href="{% url 'contact' %}" class="welcome-pointers">Contact</a>#}
+{#            <a href="{% url 'links' %}" class="welcome-pointers">Links</a>#}
+        </div>
+    </div>
+</body>
+</html>

@@ -9,5 +9,17 @@ myvenv/
 venv/
 
 # Database
-db.sqlite3
+Flog/db.sqlite3
 
+# PyCharm / IntelliJ
+.idea/
+
+# Media
+Flog/media/
+
+# Migrations
+Flog/migrations/
+
+# Compilation files
+__pycache__/
+*.py[cod]

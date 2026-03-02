@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{% static 'sakura_v1.png' %}">
+</head>
+<body>
+    <div style="position: absolute; top: 10px; left: 10px; z-index: 10;">
+        <nav>
+            <a href="{% url 'welcome' %}" class="back-button">
+                <button type="button">Back to Home</button>
+            </a>
+        </nav>
+    </div>
+
+    <div class="middle-panel">
+        <article>
+            {% for post in posts %}
+                <div>
+                    <h2>
+                        <a href="{% url 'post_detail' pk=post.pk %}">
+                            {{ post.title }}
+                        </a>
+                    </h2>
+
+                    <div>
+                        <strong>Author:</strong> {{ post.author.username }} |
+                        <strong>Published:</strong> {{ post.published_date|date:"d M Y" }}
+                    </div>
+
+                    {% if post.image %}
+                        <a href="{% url 'post_detail' pk=post.pk %}">
+                            <img src="{{ post.image.url }}" alt="{{ post.title }}">
+                        </a>
+                    {% endif %}
+
+                    <div>
+                        {{ post.description|linebreaks }}
+                    </div>
+
+                </div>
+            {% empty %}
+                <p>No post found.</p>
+            {% endfor %}
+        </article>
+    </div>
+</body>
+</html>

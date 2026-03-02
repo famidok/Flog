@@ -1,2 +1,2 @@
-# Flog
-Famidok's Blog
+# Flog - Famidok's Blog 
+A simple blog, echoing the days before modern frontend trends took over the web. This site proudly runs on plain HTML, CSS, like the web was meant to. No shitty frameworks (JS) required.

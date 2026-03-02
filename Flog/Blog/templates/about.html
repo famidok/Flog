@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About</title>
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet"></head>
+    <link rel="icon" type="image/x-icon" href="{% static 'sakura_v1.png' %}">
+<body>
+    <nav>
+        <a href="{% url 'welcome' %}" class="back-button">
+            <button type="button">Back to Home</button>
+        </a>
+    </nav>
+    <div class="about-div">
+        <div class="about-header">
+            <h1 class="main-header">About</h1>
+        </div>
+
+        <div class="about-picture">
+            {% if user_info.image %}
+                <div class="profile-image">
+                    <img src="{{ user_info.image.url }}" alt="{{ user_info.nickname }}" style="max-width: 200px;">
+                </div>
+            {% endif %}
+            <p class="picture-detail">Kyōka Suigetsu - 鏡花水月</p>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="info-div">
+                <h2>{{ user_info.nickname }}</h2>
+                <ul>
+                    {% for platform, url in user_info.social_links.items %}
+                        <li>
+                            <strong>{{ platform }}:</strong>
+                            <a href="{{ url }}" target="_blank">{{ url }}</a>
+                        </li>
+                    {% endfor %}
+                    <li>
+                        <strong>E-mail:</strong>
+                        <a href="mailto:{{ user_info.email }}">{{ user_info.email }}</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="vertical-separator"></div>
+
+            <div class="bio-text">
+                <p>{{ user_info.bio }}</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

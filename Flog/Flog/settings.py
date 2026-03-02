@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-c=$!sb10uyxta*8f3lt(!6or$zszo(v*#wl7gw31v+t+qtd92%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1',]
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '192.168.64.15']
 
 
 # Application definition
@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'Flog.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'flog',
+        'USER': 'famidok',
+		'PASSWORD': 'famidok%291121',
+		'HOST': 'localhost',
+		'PORT': '',
     }
 }
 
@@ -123,3 +127,8 @@ STATIC_ROOT = BASE_DIR / 'static'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Media Path
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+X_FRAME_OPTIONS = 'SAMEORIGIN'
