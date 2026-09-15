@@ -23,3 +23,6 @@ Flog/migrations/
 # Compilation files
 __pycache__/
 *.py[cod]
+
+# MacOS
+.DS_Store

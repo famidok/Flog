@@ -1,19 +1,18 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{ post.title }} - Blog</title>
-    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <title>C++ Thread Senkronizasyonu - Blog</title>
+    <link rel="stylesheet" href="../css/blog.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="{% static 'sakura_v1.png' %}">
+    <link rel="icon" type="image/x-icon" href="../pictures/sakura_v1.png">
 </head>
 <body>
     <div style="position: absolute; top: 10px; left: 10px; z-index: 10;">
         <nav>
-            <a href="{% url 'welcome' %}" class="back-button">
+            <a href="../blog.html" class="back-button">
                 <button type="button">Back to Home</button>
             </a>
         </nav>
@@ -21,18 +20,16 @@
 
     <div class="middle-panel">
         <article>
-            <header>
-                <h1>{{ post.title }}</h1>
-                <div>
-                    <strong>Author:</strong> {{ post.author.username }} |
-                    <strong>Published Date:</strong> {{ post.published_date|date:"d M Y" }}
-                </div>
-            </header>
+            <h1></h1>
 
-            <div class="post-content">
-                {{ post.content|linebreaks }}
+            <div>
+                <strong></strong>
+                <strong></strong>
             </div>
 
+            <div class="post-content">
+                <p></p>
+            </div>
         </article>
     </div>
 </body>

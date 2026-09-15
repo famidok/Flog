@@ -1,18 +1,17 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>About</title>
-    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <link rel="stylesheet" href="css/blog.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&display=swap" rel="stylesheet"></head>
-    <link rel="icon" type="image/x-icon" href="{% static 'sakura_v1.png' %}">
+    <link rel="icon" type="image/x-icon" href="pictures/sakura_v1.png">
 <body>
     <nav>
-        <a href="{% url 'welcome' %}" class="back-button">
+        <a href="welcome.html" class="back-button">
             <button type="button">Back to Home</button>
         </a>
     </nav>
@@ -22,35 +21,34 @@
         </div>
 
         <div class="about-picture">
-            {% if user_info.image %}
                 <div class="profile-image">
-                    <img src="{{ user_info.image.url }}" alt="{{ user_info.nickname }}" style="max-width: 200px;">
+                    <img src="pictures/0_0.jpg" alt="famidok" style="max-width: 200px;">
                 </div>
-            {% endif %}
             <p class="picture-detail">Kyōka Suigetsu - 鏡花水月</p>
         </div>
 
         <div class="content-wrapper">
             <div class="info-div">
-                <h2>{{ user_info.nickname }}</h2>
                 <ul>
-                    {% for platform, url in user_info.social_links.items %}
                         <li>
-                            <strong>{{ platform }}:</strong>
-                            <a href="{{ url }}" target="_blank">{{ url }}</a>
+                            <strong>Github:</strong>
+                            <a href="github.com/famidok" target="_blank">github.com/famidok</a>
                         </li>
-                    {% endfor %}
-                    <li>
-                        <strong>E-mail:</strong>
-                        <a href="mailto:{{ user_info.email }}">{{ user_info.email }}</a>
-                    </li>
+                        <li>
+                            <strong>LinkedIn:</strong>
+                            <a href="linkedin.com/in/emir-onder/" target="_blank">linkedin.com/in/emir-onder/</a>
+                        </li>
+                        <li>
+                            <strong>E-mail:</strong>
+                            <a href="mailto:onder.emir@protonmail.com">onder.emir@protonmail.com</a>
+                        </li>
                 </ul>
             </div>
 
             <div class="vertical-separator"></div>
 
             <div class="bio-text">
-                <p>{{ user_info.bio }}</p>
+                <p>Hi, I'm Emir, an engineer. This space is for writing about my interests and whatever comes to my mind.</p>
             </div>
         </div>
     </div>

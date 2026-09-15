@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="pictures/sakura_v1.png">
+</head>
+<body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const modal = document.getElementById("disclaimerModal");
+            const acceptBtn = document.getElementById("acceptDisclaimer");
+
+            if (!sessionStorage.getItem("disclaimerAccepted")) {
+                modal.style.display = "flex";
+            }
+
+            acceptBtn.addEventListener("click", function() {
+                modal.style.display = "none";
+                sessionStorage.setItem("disclaimerAccepted", "true");
+            });
+        });
+    </script>
+
+    <div id="disclaimerModal" class="modal-overlay">
+        <div class="modal-content">
+            <h3>Disclaimer</h3>
+            <p>While the information, references, and technical documentation shared here are based on factual knowledge, the presentation, interpretations, and opinions are entirely personal. This content should not be considered an official source or a definitive reference.</p>
+            <button id="acceptDisclaimer">I Understand</button>
+        </div>
+    </div>
+
+    <div style="position: absolute; top: 10px; left: 10px; z-index: 10;">
+        <nav>
+            <a href="welcome.html" class="back-button">
+                <button type="button">Back to Home</button>
+            </a>
+        </nav>
+    </div>
+
+    <div class="middle-panel">
+        <article>
+            <div>
+                <h2>
+                    <a href="posts/post_example.html">
+                    </a>
+                </h2>
+
+                <div>
+                    <strong>Nothing to show.</strong>
+                    <strong></strong>
+                </div>
+
+                <div>
+                    <p></p>
+                </div>
+
+                <!-- <hr class="solid-divider"> !-->
+            </div>
+        </article>
+    </div>
+</body>
+</html>
